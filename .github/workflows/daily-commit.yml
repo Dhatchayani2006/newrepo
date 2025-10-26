@@ -16,9 +16,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Step for 23f2004072@ds.study.iitm.ac.in
+      - name: Process for 23f2004072@ds.study.iitm.ac.in
         run: |
           echo "Running automated daily commit workflow"
+          echo "Processing for email: 23f2004072@ds.study.iitm.ac.in"
           date
 
       - name: Create daily update file
@@ -29,6 +30,7 @@ jobs:
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
           echo "Daily update: ${TIMESTAMP}" > daily-updates/update-${DATE}.txt
           echo "Workflow run completed successfully" >> daily-updates/update-${DATE}.txt
+          echo "Email: 23f2004072@ds.study.iitm.ac.in" >> daily-updates/update-${DATE}.txt
 
       - name: Commit and push changes
         run: |
